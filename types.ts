@@ -14,7 +14,6 @@ export interface ServiceItem {
   icon: React.ReactNode;
 }
 
-// Fix: Export GeneratorState enum required by CoverGenerator.tsx
 export enum GeneratorState {
   IDLE = 'IDLE',
   GENERATING = 'GENERATING',
