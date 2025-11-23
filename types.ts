@@ -13,10 +13,3 @@ export interface ServiceItem {
   description: string;
   icon: React.ReactNode;
 }
-
-export enum GeneratorState {
-  IDLE = 'IDLE',
-  GENERATING = 'GENERATING',
-  SUCCESS = 'SUCCESS',
-  ERROR = 'ERROR',
-}

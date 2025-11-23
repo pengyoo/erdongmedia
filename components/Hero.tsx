@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
 
         {/* Main Title Block */}
         <div className="relative mb-6 group">
-           <h1 className="text-8xl md:text-[10rem] lg:text-[12rem] font-bold text-white leading-[0.85] tracking-tighter mix-blend-screen scale-y-110">
+           <h1 className="text-8xl md:text-[10rem] lg:text-[12rem] font-bold text-white leading-[0.85] tracking-tighter scale-y-110">
             <div className="glitch-wrapper">
               <span className="glitch-text block" data-text="贰东">贰东</span>
             </div>
