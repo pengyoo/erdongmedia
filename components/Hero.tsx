@@ -2,70 +2,85 @@ import React from 'react';
 
 const Hero: React.FC = () => {
   return (
-    <div id="home" className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-[#050505]">
-      {/* Dynamic Background Elements */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* Animated Gradient Orbs */}
-        <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-blue-600/20 rounded-full blur-[120px] animate-pulse" style={{animationDuration: '4s'}} />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-purple-600/10 rounded-full blur-[120px] animate-pulse" style={{animationDuration: '7s'}} />
-        
-        {/* Tech Grid Overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_100%)]" />
-        
-        {/* Noise Texture (Optional CSS based noise) */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E")'}}></div>
+    <div id="home" className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-[#030303]">
+      {/* Background Elements */}
+      <div className="absolute inset-0 z-0">
+         {/* Cyberpunk Grid */}
+         <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,0,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_100%)] transform perspective-1000 rotate-x-60 scale-150 origin-bottom" />
+         
+         {/* Glow Orbs */}
+         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[100px] animate-pulse" />
+         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-[100px] animate-pulse delay-1000" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-6xl mx-auto flex flex-col items-center select-none">
+      <div className="relative z-10 text-center px-4 max-w-7xl mx-auto flex flex-col items-center select-none w-full">
         
-        <div className="mb-8 flex items-center gap-4 animate-fade-in-up opacity-80">
-           <div className="h-[2px] w-8 md:w-16 bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
-           <span className="text-blue-400 font-mono text-xs md:text-sm tracking-[0.4em] uppercase">Cinematic FPV & Creative Visuals</span>
-           <div className="h-[2px] w-8 md:w-16 bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
+        <div className="flex items-center gap-6 mb-8 opacity-0 animate-[fadeIn_1s_ease-out_forwards]">
+           <div className="h-[1px] w-12 bg-gradient-to-r from-transparent to-blue-500"></div>
+           <span className="text-blue-400 font-mono text-xs tracking-[0.5em] uppercase drop-shadow-[0_0_10px_rgba(59,130,246,0.8)]">
+             FPV / CINEMATIC / VISUALS
+           </span>
+           <div className="h-[1px] w-12 bg-gradient-to-l from-transparent to-blue-500"></div>
         </div>
 
-        {/* Main Title with stronger presence */}
-        <div className="relative mb-8">
-           <h1 className="text-7xl md:text-9xl lg:text-[10rem] font-bold text-white leading-none tracking-tighter mix-blend-screen">
-            <span className="glitch-text block" data-text="贰东传媒">贰东传媒</span>
+        {/* Main Title Block */}
+        <div className="relative mb-6 group">
+           <h1 className="text-8xl md:text-[10rem] lg:text-[12rem] font-bold text-white leading-[0.85] tracking-tighter mix-blend-screen scale-y-110">
+            <div className="glitch-wrapper">
+              <span className="glitch-text block" data-text="贰东">贰东</span>
+            </div>
+            <div className="glitch-wrapper">
+              <span className="glitch-text block text-transparent bg-clip-text bg-gradient-to-b from-gray-100 to-gray-500" data-text="传媒">传媒</span>
+            </div>
           </h1>
-          {/* Decorative outline text behind */}
-          <h1 className="absolute top-1 left-1 w-full text-7xl md:text-9xl lg:text-[10rem] font-bold text-transparent leading-none tracking-tighter stroke-text opacity-30 blur-sm pointer-events-none" style={{WebkitTextStroke: '1px #3b82f6'}}>
-            贰东传媒
-          </h1>
+          
+          {/* Decorative Elements around text */}
+          <div className="absolute -top-4 -right-8 text-xs font-mono text-blue-500/50 rotate-90 hidden md:block">
+            SYSTEM_READY // 2024
+          </div>
+          <div className="absolute -bottom-4 -left-8 text-xs font-mono text-purple-500/50 -rotate-90 hidden md:block">
+            EST. 2019 // SHENZHEN
+          </div>
         </div>
         
-        <p className="text-lg md:text-2xl text-gray-400 mb-12 max-w-2xl mx-auto font-light tracking-widest leading-relaxed">
-          既然生而为人，就别像幽灵一样活着。<br/>
-          <span className="text-white font-medium bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">燃尽热血，记录不凡。</span>
-        </p>
+        <div className="relative mt-8 mb-12 max-w-xl mx-auto opacity-0 animate-[fadeIn_1s_ease-out_0.5s_forwards]">
+          <p className="text-lg md:text-xl text-gray-400 font-light tracking-widest leading-relaxed">
+            视界无界，<span className="text-white font-bold italic">极速</span> 穿梭。
+            <br />
+            我们在重力消失的地方，寻找画面的 <span className="text-blue-400">极值</span>。
+          </p>
+        </div>
         
-        <div className="flex flex-col sm:flex-row gap-6 justify-center w-full sm:w-auto z-20">
+        <div className="flex flex-col sm:flex-row gap-6 justify-center w-full sm:w-auto z-20 opacity-0 animate-[fadeIn_1s_ease-out_1s_forwards]">
           <a 
             href="#gallery" 
-            className="group relative px-10 py-4 bg-white text-black font-bold text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] clip-path-slant"
+            className="group relative px-12 py-5 bg-white text-black font-bold text-lg uppercase tracking-widest overflow-hidden hover:scale-105 transition-transform duration-300 clip-path-polygon"
+            style={{clipPath: 'polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)'}}
           >
-            <div className="absolute inset-0 bg-blue-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
-            <span className="relative group-hover:text-white transition-colors flex items-center gap-2">
-              浏览作品 
-              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            <div className="absolute inset-0 bg-blue-600 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-300 ease-out" />
+            <span className="relative group-hover:text-white transition-colors flex items-center gap-3">
+              View Portfolio
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
             </span>
-          </a>
-          
-          <a 
-            href="#contact" 
-            className="group px-10 py-4 bg-transparent border border-white/20 text-white font-bold text-lg hover:border-blue-500 hover:text-blue-400 hover:bg-blue-500/5 transition-all backdrop-blur-sm"
-          >
-            联系合作
           </a>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-60">
-        <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-blue-400 animate-pulse">Scroll to Explore</span>
-        <div className="w-[1px] h-16 bg-gradient-to-b from-blue-500 to-transparent"></div>
+      {/* Decorative HUD Elements */}
+      <div className="absolute bottom-10 left-10 hidden md:block">
+         <div className="flex flex-col gap-1 text-[10px] font-mono text-gray-600">
+            <span>LAT: 22.5431 N</span>
+            <span>LNG: 114.0579 E</span>
+            <span className="text-green-500 animate-pulse">SIGNAL: STRONG</span>
+         </div>
+      </div>
+      
+      <div className="absolute bottom-10 right-10 hidden md:block text-right">
+         <div className="flex flex-col gap-1 text-[10px] font-mono text-gray-600">
+            <span>VELOCITY: 150 KM/H</span>
+            <span>ALTITUDE: 500 M</span>
+            <span className="text-blue-500">MODE: ACRO</span>
+         </div>
       </div>
     </div>
   );
