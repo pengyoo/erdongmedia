@@ -98,6 +98,16 @@
         z-index: 9999;
         opacity: 0.3;
       }
+      
+      @keyframes grid-fly {
+        0% { transform: perspective(1000px) rotateX(60deg) translateY(0); }
+        100% { transform: perspective(1000px) rotateX(60deg) translateY(60px); }
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
     </style>
   <script type="importmap">
 {

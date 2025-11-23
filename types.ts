@@ -2,9 +2,11 @@ export interface Project {
   id: string;
   title: string;
   date: string;
-  category: 'Cinematic' | 'Freestyle' | 'Racing';
+  category: 'Cinematic' | 'Freestyle' | 'Racing' | 'Commercial';
   thumbnailUrl: string;
   views: string;
+  videoUrl?: string; // Optional for now
+  description?: string;
 }
 
 export interface ServiceItem {
