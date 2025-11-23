@@ -2,13 +2,14 @@ import React, { useState, useMemo } from 'react';
 import { Project } from '../types';
 
 // Expanded mock data with fixed and high-quality URLs
+// Reduced to 6 high-quality items to ensure stability and visual impact
 const allProjects: Project[] = [
   { 
     id: '1', 
     title: 'NEON CITY DIVE', 
     date: 'OCT 2023', 
     category: 'Freestyle', 
-    thumbnailUrl: 'https://images.unsplash.com/photo-1565626424177-969641753754?q=80&w=800&auto=format&fit=crop', // Cyberpunk City
+    thumbnailUrl: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=800&auto=format&fit=crop', // Night City View
     views: '12K', 
     description: '穿梭于繁华都市的霓虹灯海，极限贴楼飞行。' 
   },
@@ -17,7 +18,7 @@ const allProjects: Project[] = [
     title: 'SNOW DRIFT', 
     date: 'DEC 2023', 
     category: 'Cinematic', 
-    thumbnailUrl: 'https://images.unsplash.com/photo-1551524559-8af4e66a3239?q=80&w=800&auto=format&fit=crop', // Snow Skiing
+    thumbnailUrl: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?q=80&w=800&auto=format&fit=crop', // Skiing
     views: '8.5K', 
     description: '雪山之巅的极速追逐，捕捉滑雪者的动态瞬间。' 
   },
@@ -26,7 +27,7 @@ const allProjects: Project[] = [
     title: 'ABANDONED FACTORY', 
     date: 'NOV 2023', 
     category: 'Freestyle', 
-    thumbnailUrl: 'https://images.unsplash.com/photo-1550948537-130a1ce83314?q=80&w=800&auto=format&fit=crop', // Industrial/Abandoned
+    thumbnailUrl: 'https://images.unsplash.com/photo-1520690214124-2405c5217036?q=80&w=800&auto=format&fit=crop', // Abandoned Industrial
     views: '22K', 
     description: '在废弃工业遗址中的花式操作，充满颓废美学。' 
   },
@@ -35,7 +36,7 @@ const allProjects: Project[] = [
     title: 'COASTAL CHASE', 
     date: 'AUG 2023', 
     category: 'Cinematic', 
-    thumbnailUrl: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=800&auto=format&fit=crop', // Coastal Road
+    thumbnailUrl: 'https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?q=80&w=800&auto=format&fit=crop', // Winding Road
     views: '15K', 
     description: '沿着海岸线的长镜头追车，海浪与引擎的协奏曲。' 
   },
@@ -44,46 +45,19 @@ const allProjects: Project[] = [
     title: 'UNDERGROUND', 
     date: 'JAN 2024', 
     category: 'Racing', 
-    thumbnailUrl: 'https://images.unsplash.com/photo-1495539406979-bf61752d0222?q=80&w=800&auto=format&fit=crop', // Dark Tunnel
+    thumbnailUrl: 'https://images.unsplash.com/photo-1515263487990-61b07816b324?q=80&w=800&auto=format&fit=crop', // Neon Tunnel
     views: '18K', 
     description: '地下停车场的极速狂飙，考验反应速度的极限。' 
   },
   { 
     id: '6', 
-    title: 'SUNSET TOWER', 
-    date: 'SEP 2023', 
-    category: 'Cinematic', 
-    thumbnailUrl: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=800&auto=format&fit=crop', // City Sunset
-    views: '9K', 
-    description: '日落时分的城市地标环绕，唯美光影。' 
-  },
-  { 
-    id: '7', 
     title: 'EV CAR TVC', 
     date: 'FEB 2024', 
     category: 'Commercial', 
-    thumbnailUrl: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=800&auto=format&fit=crop', // Cool Car
+    thumbnailUrl: 'https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=800&auto=format&fit=crop', // Modern Car
     views: '45K', 
     description: '某电动汽车品牌官方宣传片，展现科技与速度。' 
-  },
-  { 
-    id: '8', 
-    title: 'FOREST GAP', 
-    date: 'JUL 2023', 
-    category: 'Racing', 
-    thumbnailUrl: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800&auto=format&fit=crop', // Forest
-    views: '11K', 
-    description: '密林穿越，不仅要快，更要精准。' 
-  },
-  { 
-    id: '9', 
-    title: 'MUSIC FESTIVAL', 
-    date: 'MAY 2023', 
-    category: 'Commercial', 
-    thumbnailUrl: 'https://images.unsplash.com/photo-1459749411177-718bf9954a6c?q=80&w=800&auto=format&fit=crop', // Concert
-    views: '32K', 
-    description: '万人音乐节现场，从人群头顶呼啸而过。' 
-  },
+  }
 ];
 
 const categories = ['ALL', 'CINEMATIC', 'FREESTYLE', 'RACING', 'COMMERCIAL'];
@@ -211,7 +185,7 @@ const Gallery: React.FC = () => {
             key={project.id} 
             onClick={() => setSelectedProject(project)}
             className="group relative aspect-video bg-[#111] overflow-hidden cursor-pointer border border-white/5 hover:border-blue-500/50 transition-all duration-500 animate-[fadeIn_0.5s_ease-out_forwards]"
-            style={{ animationDelay: `${idx * 0.05}s` }}
+            style={{ animationDelay: `${idx * 0.1}s` }}
           >
             {/* Image */}
             <img 
@@ -254,14 +228,6 @@ const Gallery: React.FC = () => {
            // NO SIGNAL DETECTED IN THIS SECTOR
          </div>
       )}
-
-      {/* Load More Button (Visual Only) */}
-      <div className="mt-20 flex justify-center">
-        <button className="relative px-12 py-4 bg-transparent text-white border border-white/20 hover:border-blue-500 transition-all duration-300 font-bold tracking-widest uppercase text-sm group overflow-hidden">
-          <span className="relative z-10 group-hover:text-blue-500 transition-colors">Load More Archives</span>
-          <div className="absolute inset-0 bg-white/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-        </button>
-      </div>
 
       {/* Modal */}
       {selectedProject && (
